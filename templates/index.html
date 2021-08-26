@@ -1,58 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+{% block content %}
+<h1>Data from index</h1>
 
-<style>
-.css_input {
-color: yellow;
-background-color: red;
-}
-</style>
+<img src="{% static 'img\1969-chevrolet-camaro-ss (1920x1080).jpg' %}" height='700'>
 
-<form action="{% url 'thanks_page' %}" method="">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">SEND</button>
-</form>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-{% if object_list %}
-<table border="1">
-    <tr>
-        <th>ID</th>
-        <th>Date</th>
-        <th>Name</th>
-        <th>Phone</th>
-    </tr>
-{% for obj in object_list %}
-    <tr>
-        <th>{{ obj.id }}</th>
-        <th>{{ obj.order_dt }}</th>
-        <th>{{ obj.order_name }}</th>
-        <th>{{ obj.order_phone }}</th>
-    </tr>
-{% endfor %}
-</table>
-{% else %}
-No data
-{% endif %}
-
-</body>
-</html>
+{% endblock %}
