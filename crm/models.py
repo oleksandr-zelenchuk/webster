@@ -8,3 +8,7 @@ class Order(models.Model):
 
     def __str__(self):
         return self.order_name
+
+    class Meta:
+        verbose_name = 'Order'
+        verbose_name_plural = ('Orders')
